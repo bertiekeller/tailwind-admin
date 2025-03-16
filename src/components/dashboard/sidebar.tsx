@@ -19,8 +19,8 @@ const SidebarItem = ({ href, icon, label }: SidebarItemProps) => {
       <div
         className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium ${
           isActive
-            ? "bg-blue-100/10 text-white"
-            : "text-white/70 hover:bg-blue-100/10 hover:text-white"
+            ? "bg-yellow-500/20 text-yellow-400"
+            : "text-gray-300 hover:bg-yellow-500/10 hover:text-yellow-400"
         }`}
       >
         {icon}
@@ -32,12 +32,12 @@ const SidebarItem = ({ href, icon, label }: SidebarItemProps) => {
 
 export function Sidebar() {
   return (
-    <div className="fixed flex h-screen w-[160px] flex-col bg-blue-600">
+    <div className="fixed flex h-screen w-[160px] flex-col bg-gray-900">
       <div className="p-4">
-        <h1 className="text-xl font-bold text-white">ADMIN</h1>
+        <h1 className="text-xl font-bold text-white">Build with AI</h1>
       </div>
       <div className="px-3 py-2">
-        <Button className="w-full bg-white text-blue-600 hover:bg-white/90">
+        <Button className="w-full bg-yellow-500 text-gray-900 hover:bg-yellow-400">
           <span className="mr-2">+</span> New Report
         </Button>
       </div>
@@ -74,7 +74,7 @@ export function Sidebar() {
         />
       </div>
       <div className="mt-auto p-4">
-        <Button className="w-full bg-white/20 text-white hover:bg-white/30" variant="ghost">
+        <Button className="w-full bg-yellow-500/20 text-yellow-400 hover:bg-yellow-500/30" variant="ghost">
           <span className="mr-2">⭐</span> Upgrade to Pro!
         </Button>
       </div>

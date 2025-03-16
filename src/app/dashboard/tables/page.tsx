@@ -2,8 +2,8 @@
 
 export default function TablesPage() {
   return (
-    <div>
-      <h1 className="mb-6 text-2xl font-semibold">Tables</h1>
+    <div className="bg-gray-900 min-h-screen">
+      <h1 className="mb-6 text-2xl font-semibold text-white">Tables</h1>
     </div>
   );
 } 

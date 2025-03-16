@@ -59,26 +59,26 @@ export function LatestReports() {
   return (
     <div className="mt-8">
       <div className="flex items-center mb-4">
-        <span className="mr-2 text-xl">≡</span>
-        <h2 className="text-xl font-semibold">Latest Reports</h2>
+        <span className="mr-2 text-xl text-yellow-400">≡</span>
+        <h2 className="text-xl font-semibold text-white">Latest Reports</h2>
       </div>
-      <div className="rounded-md border">
+      <div className="rounded-md border border-gray-700 bg-gray-800">
         <Table>
-          <TableHeader className="bg-gray-100">
-            <TableRow>
-              <TableHead className="w-[100px] font-bold uppercase text-gray-700">NAME</TableHead>
-              <TableHead className="font-bold uppercase text-gray-700">LAST NAME</TableHead>
-              <TableHead className="font-bold uppercase text-gray-700">PHONE</TableHead>
-              <TableHead className="font-bold uppercase text-gray-700">EMAIL</TableHead>
+          <TableHeader className="bg-gray-900">
+            <TableRow className="border-gray-700">
+              <TableHead className="w-[100px] font-bold uppercase text-gray-400">NAME</TableHead>
+              <TableHead className="font-bold uppercase text-gray-400">LAST NAME</TableHead>
+              <TableHead className="font-bold uppercase text-gray-400">PHONE</TableHead>
+              <TableHead className="font-bold uppercase text-gray-400">EMAIL</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {reportData.map((report) => (
-              <TableRow key={report.id}>
-                <TableCell className="font-medium">{report.firstName}</TableCell>
-                <TableCell>{report.lastName}</TableCell>
-                <TableCell>{report.phone}</TableCell>
-                <TableCell>{report.email}</TableCell>
+              <TableRow key={report.id} className="border-gray-700 hover:bg-gray-700/50">
+                <TableCell className="font-medium text-white">{report.firstName}</TableCell>
+                <TableCell className="text-gray-300">{report.lastName}</TableCell>
+                <TableCell className="text-gray-300">{report.phone}</TableCell>
+                <TableCell className="text-yellow-400">{report.email}</TableCell>
               </TableRow>
             ))}
           </TableBody>

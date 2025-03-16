@@ -30,37 +30,40 @@ const colorData: ColorData[] = [
 ];
 
 const colorMap: Record<string, string> = {
-  Red: "#f87171",
-  Blue: "#60a5fa",
-  Yellow: "#fcd34d",
-  Green: "#6ee7b7",
-  Purple: "#c084fc", 
-  Orange: "#fdba74"
+  Red: "#ef4444",
+  Blue: "#3b82f6",
+  Yellow: "#eab308",
+  Green: "#22c55e",
+  Purple: "#a855f7", 
+  Orange: "#f97316"
 };
 
 export function MonthlyReportsChart() {
   return (
-    <Card>
+    <Card className="bg-gray-800 border-gray-700">
       <CardHeader>
-        <CardTitle className="flex items-center">
-          <span className="mr-2">+</span> Monthly Reports
+        <CardTitle className="flex items-center text-white">
+          <span className="mr-2 text-yellow-400">+</span> Monthly Reports
         </CardTitle>
       </CardHeader>
       <CardContent>
         <div className="h-[300px]">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={colorData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
+              <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+              <XAxis dataKey="name" stroke="#9ca3af" />
+              <YAxis stroke="#9ca3af" />
+              <Tooltip 
+                contentStyle={{ backgroundColor: '#1f2937', border: '1px solid #374151', color: '#f3f4f6' }}
+                labelStyle={{ color: '#f3f4f6' }}
+              />
+              <Legend wrapperStyle={{ color: '#f3f4f6' }} />
               <Bar 
                 dataKey="votes" 
                 name="# of Votes" 
                 radius={[4, 4, 0, 0]}
                 isAnimationActive={false}
-                fill="#8884d8"
+                fill="#eab308"
               >
                 {colorData.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={colorMap[entry.name]} />
@@ -76,27 +79,30 @@ export function MonthlyReportsChart() {
 
 export function ResolvedReportsChart() {
   return (
-    <Card>
+    <Card className="bg-gray-800 border-gray-700">
       <CardHeader>
-        <CardTitle className="flex items-center">
-          <span className="mr-2">✓</span> Resolved Reports
+        <CardTitle className="flex items-center text-white">
+          <span className="mr-2 text-yellow-400">✓</span> Resolved Reports
         </CardTitle>
       </CardHeader>
       <CardContent>
         <div className="h-[300px]">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={colorData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
+              <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+              <XAxis dataKey="name" stroke="#9ca3af" />
+              <YAxis stroke="#9ca3af" />
+              <Tooltip 
+                contentStyle={{ backgroundColor: '#1f2937', border: '1px solid #374151', color: '#f3f4f6' }}
+                labelStyle={{ color: '#f3f4f6' }}
+              />
+              <Legend wrapperStyle={{ color: '#f3f4f6' }} />
               <Area 
                 type="monotone" 
                 dataKey="votes" 
                 name="# of Votes"
-                stroke="#f87171" 
-                fill="#fecaca" 
+                stroke="#eab308" 
+                fill="#eab30850" 
                 isAnimationActive={false} 
               />
             </AreaChart>

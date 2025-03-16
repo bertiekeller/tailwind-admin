@@ -1,19 +1,23 @@
 "use client";
 
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
+import { Navbar } from "@/components/landing/navbar";
+import { Hero } from "@/components/landing/hero";
+import { Features } from "@/components/landing/features";
+import { Community } from "@/components/landing/community";
+import { CTA } from "@/components/landing/cta";
+import { Footer } from "@/components/landing/footer";
 
 export default function Home() {
-  const router = useRouter();
-  
-  useEffect(() => {
-    router.push("/dashboard");
-  }, [router]);
-
   return (
-    <div className="flex min-h-screen items-center justify-center">
-      <p className="text-lg text-gray-500">Redirecting to dashboard...</p>
+    <div className="bg-gray-900 min-h-screen">
+      <Navbar />
+      <main className="pt-16">
+        <Hero />
+        <Features />
+        <Community />
+        <CTA />
+      </main>
+      <Footer />
     </div>
   );
 }
