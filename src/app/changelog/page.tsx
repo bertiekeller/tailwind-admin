@@ -4,6 +4,7 @@ import { Footer } from "@/components/landing/footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Clock, Bug, Zap, Package, Layers } from "lucide-react";
+import { NewsletterForm } from "@/components/newsletter-form";
 
 export default function ChangelogPage() {
   const releases = [
@@ -136,7 +137,7 @@ export default function ChangelogPage() {
     }
   ];
   
-  const getBadgeColor = (type) => {
+  const getBadgeColor = (type: string) => {
     switch(type) {
       case "major":
         return "bg-yellow-500/20 text-yellow-400 hover:bg-yellow-500/30";
@@ -149,7 +150,7 @@ export default function ChangelogPage() {
     }
   };
   
-  const getCategoryIcon = (category) => {
+  const getCategoryIcon = (category: string) => {
     switch(category) {
       case "Feature":
         return <Zap className="h-4 w-4 mr-2" />;
@@ -257,13 +258,13 @@ export default function ChangelogPage() {
             <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
               Subscribe to our newsletter to receive updates about new features, improvements, and upcoming releases.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-yellow-500 text-gray-900 hover:bg-yellow-400">
-                <Link href="/signup">Subscribe to Updates</Link>
-              </Button>
-              <Button asChild variant="outline" className="border-gray-600 text-gray-300 hover:border-yellow-500 hover:text-yellow-400">
-                <Link href="/community">Join Our Community</Link>
-              </Button>
+            <div className="flex justify-center">
+              <NewsletterForm 
+                title="" 
+                description=""
+                buttonText="Subscribe to Updates"
+                className="mx-auto"
+              />
             </div>
           </div>
         </section>

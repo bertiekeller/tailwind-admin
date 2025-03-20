@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
+import { NewsletterForm } from "@/components/newsletter-form";
 import { MessageSquare, Users, Calendar, Badge, ArrowRight, Globe, CalendarIcon, Github } from "lucide-react";
 
 const communityFeatures = [
@@ -241,15 +242,13 @@ export default function CommunityPage() {
             <p className="text-gray-300 mb-8">
               Subscribe to our newsletter to receive updates on community events, new resources, and AI industry news.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-0">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="flex-grow px-4 py-3 rounded-l-md sm:rounded-r-none rounded-r-md sm:rounded-l-md bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-yellow-500"
+            <div className="flex justify-center">
+              <NewsletterForm 
+                title="" 
+                description=""
+                buttonText="Subscribe"
+                className="mx-auto"
               />
-              <Button className="sm:rounded-l-none rounded-l-md sm:rounded-r-md bg-yellow-500 text-gray-900 hover:bg-yellow-400">
-                Subscribe
-              </Button>
             </div>
           </div>
         </section>

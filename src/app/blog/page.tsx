@@ -1,9 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
+import { NewsletterForm } from "@/components/newsletter-form";
 
 export default function BlogPage() {
   const featuredPost = {
@@ -223,15 +225,14 @@ export default function BlogPage() {
             <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
               Get the latest articles, tutorials, and AI news delivered directly to your inbox. No spam, just valuable content.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-0">
-              <Input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="flex-grow px-4 py-3 rounded-l-md sm:rounded-r-none rounded-r-md sm:rounded-l-md bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-yellow-500"
+            <div className="flex justify-center">
+              <NewsletterForm 
+                title="" 
+                description=""
+                buttonText="Subscribe"
+                showNameField={true}
+                className="mx-auto"
               />
-              <Button className="sm:rounded-l-none rounded-l-md sm:rounded-r-md bg-yellow-500 text-gray-900 hover:bg-yellow-400">
-                Subscribe
-              </Button>
             </div>
           </div>
         </section>
